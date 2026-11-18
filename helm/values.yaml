@@ -1,0 +1,24 @@
+# Only 1 replica: two bot instances with the same token conflict (Telegram 409)
+replicaCount: 1
+
+image:
+  repository: ghcr.io/chumachenko-vy
+  tag: v1.0.0
+  arch: amd64
+  pullPolicy: IfNotPresent
+
+# TELE_TOKEN is taken from an existing Kubernetes secret
+secret:
+  name: kbot
+  env: TELE_TOKEN
+  key: token
+
+nameOverride: ""
+fullnameOverride: ""
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+  limits:
+    memory: 64Mi

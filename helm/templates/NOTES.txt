@@ -1,0 +1,7 @@
+{{ .Chart.Name }} {{ .Chart.AppVersion }} installed as release "{{ .Release.Name }}" in namespace "{{ .Release.Namespace }}".
+
+The bot reads TELE_TOKEN from secret "{{ .Values.secret.name }}" (key "{{ .Values.secret.key }}"). If it doesn't exist yet:
+  kubectl create secret generic {{ .Values.secret.name }} --from-literal={{ .Values.secret.key }}=<YOUR_TELE_TOKEN>
+
+Logs:
+  kubectl logs deploy/{{ include "kbot.fullname" . }}
