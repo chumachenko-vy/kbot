@@ -1,21 +1,21 @@
 # Only 1 replica: two bot instances with the same token conflict (Telegram 409)
 replicaCount: 1
-
+# Image reference: <registry>/<repository>:<tag>-<os>-<arch>
+# tag is updated automatically by the GitHub Actions CD job
 image:
-  repository: ghcr.io/chumachenko-vy
-  tag: v1.0.0
+  registry: "ghcr.io"
+  repository: "chumachenko-vy/kbot"
+  tag: "v1.0.0-df79939"
+  os: linux
   arch: amd64
   pullPolicy: IfNotPresent
-
 # TELE_TOKEN is taken from an existing Kubernetes secret
 secret:
   name: kbot
   env: TELE_TOKEN
   key: token
-
 nameOverride: ""
 fullnameOverride: ""
-
 resources:
   requests:
     cpu: 10m
