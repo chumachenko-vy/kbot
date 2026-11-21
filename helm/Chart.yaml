@@ -3,4 +3,4 @@ name: kbot
 description: Helm chart for kbot - simple Telegram bot
 type: application
 version: 1.0.0
-appVersion: "v1.0.0-df79939"
+appVersion: "v1.0.0-2bab813"

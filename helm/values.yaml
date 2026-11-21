@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   registry: "ghcr.io"
   repository: "chumachenko-vy/kbot"
-  tag: "v1.0.0-df79939"
+  tag: "v1.0.0-2bab813"
   os: linux
   arch: amd64
   pullPolicy: IfNotPresent
